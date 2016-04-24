@@ -29,3 +29,9 @@ Route::get('/', function () {
 Route::group(['middleware' => ['web']], function () {
     //
 });
+
+Route::group(['prefix' => 'api'], function(){
+	Route::group(['prefix' => 'fixture'],function(){
+		Route::get('/','FixtureController@index');
+	});
+});
